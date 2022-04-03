@@ -1,0 +1,14 @@
+{ 
+    "monsters": [
+        {
+            "name": "Goblin",
+            "gold": 5,
+            "possibleItemsToDrop": [ "axe","sword","helmet" ]
+        },
+        {
+            "name": "Orc",
+            "gold": 10,
+            "possibleItemsToDrop": [ "hammer","axe","sword","shield","helmet" ]
+        }
+    ]
+}

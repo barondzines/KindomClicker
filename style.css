@@ -1,0 +1,29 @@
+/** Helper Classes **/
+.centered{
+    text-align: center;
+}
+
+.msg-box.show{
+    animation: show_slide 1s ease forwards;
+}
+
+.msg-box.hide{
+    display:none;
+}
+
+@keyframes show_slide {
+    0%{
+        transform: translateY(-100%);
+    }
+    40%{
+        transform: translateY(10%);
+    }
+     80%{
+         transform: translateY(0%);
+     }
+
+     100%{
+         transform: translateY(10px);
+     }
+}
+

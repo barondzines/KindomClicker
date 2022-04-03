@@ -1,0 +1,44 @@
+Arguments: 
+  /Users/guxlin08/.nvm/versions/node/v10.13.0/bin/node /usr/local/bin/yarn add bulma
+
+PATH: 
+  /Users/guxlin08/.nvm/versions/node/v10.13.0/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/VMware Fusion.app/Contents/Public:/usr/local/share/dotnet:~/.dotnet/tools:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/Users/guxlin08/.nvm/versions/node/v10.13.0/bin:/Users/guxlin08/apache-maven-3.8.1/bin:/Users/guxlin08/apache-maven-3.8.1/bin
+
+Yarn version: 
+  1.9.4
+
+Node version: 
+  10.13.0
+
+Platform: 
+  darwin x64
+
+Trace: 
+  Error: getaddrinfo ENOTFOUND www.nexus.ford.com www.nexus.ford.com:443
+      at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:57:26)
+
+npm manifest: 
+  {
+    "name": "kindomclicker",
+    "version": "1.0.0",
+    "description": "A clicker game for the ages",
+    "main": "script.js",
+    "dependencies": {
+      "oauth": "^0.9.12"
+    },
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [
+      "web",
+      "game"
+    ],
+    "author": "BaronGames",
+    "license": "ISC"
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
