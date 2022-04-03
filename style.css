@@ -13,17 +13,17 @@
 
 @keyframes show_slide {
     0%{
-        transform: translateY(-100%);
+        transform: translateX(-30%);
     }
     40%{
-        transform: translateY(10%);
+        transform: translateX(10%);
     }
      80%{
-         transform: translateY(0%);
+         transform: translateX(0%);
      }
 
      100%{
-         transform: translateY(10px);
+         transform: translateX(10px);
      }
 }
 
