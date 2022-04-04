@@ -1,13 +1,15 @@
+import * as dice from "./diceBag.js";
+
 export const getRandomNumber = (min, max) => {
     return Math.floor(Math.random() * (max - min) + min);
 }
 
-export let getMonsterJsonData = async () => {
+export let getMonsterJsonData = async() => {
     let url = `../game_data/monsters.json`;
-    try{
+    try {
         let res = await fetch(url);
         return await res.json()
-    }catch (error){
+    } catch (error) {
         console.log(error);
     }
     // }
@@ -17,8 +19,13 @@ export let getMonsterJsonData = async () => {
     // }).then(data => console.log('then data', data));
 }
 
-export async function fetchMonsterName (){
+export async function fetchMonsterName() {
     let response = await fetch(`../game_data/monsters.json`);
     let data = await response.json();
     return data;
+}
+
+export const rollInitiative = (dex = 0, modifierFeat = 0, modifierEquipment = 0) => {
+    const dieRoll = dice.die20;
+
 }

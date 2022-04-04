@@ -1,5 +1,6 @@
 import * as utils from "./utils.js";
 import * as monsterData from "./monsterUtils.js";
+import * as dice from "./diceBag.js";
 
 //DOM Classes
 const clickHeading = document.querySelector("#money-heading");
@@ -19,17 +20,17 @@ let autoClickerLive = false;
 let clickPerSecond = 5;
 
 //Even Listeners
-questBtn.addEventListener("click", async function(){
-    let goldEarned = utils.getRandomNumber(1 , 5);
+questBtn.addEventListener("click", async function() {
+    let goldEarned = utils.getRandomNumber(1, 5);
     let monster = await monsterData.getMonsterName();
+    console.log('role20', dice.die20());
     gold += goldEarned;
     messageBox(`You fought and killed a ${monster} and earned ${goldEarned} gold`);
     clickHeading.innerHTML = `Gold: ${gold}`;
 })
 
-autoClickerBtn.addEventListener("click", () =>{
-    if(gold > cost)
-    {
+autoClickerBtn.addEventListener("click", () => {
+    if (gold > cost) {
         gold -= cost;
         autoClickerLive = true;
         clickHeading.innerHTML = `gold: ${gold}`;
@@ -46,36 +47,33 @@ let autoClicker = () => {
 
 //Message Box Window
 messageClose.addEventListener("click", () => {
-    if(messageContainer.classList.contains("show"))
-    {
+    if (messageContainer.classList.contains("show")) {
         messageContainer.classList.remove("show");
         messageContainer.classList.add("hide");
     }
 })
 
-let setMessageCloseTimeout = () =>{
-    messageCloseTimeout = setTimeout(function(){
+let setMessageCloseTimeout = () => {
+    messageCloseTimeout = setTimeout(function() {
         messageContainer.classList.remove("show");
         messageContainer.classList.add("hide");
-    },3000)
+    }, 3000)
 }
 
 let messageBox = (message) => {
-    if(messageContainer.classList.contains("hide"))
-    {
+    if (messageContainer.classList.contains("hide")) {
         messageContainer.classList.add("show");
-       messageContainer.classList.remove("hide");
+        messageContainer.classList.remove("hide");
         messageBody.innerHTML = message;
         setMessageCloseTimeout();
 
-    } else if (messageContainer.classList.contains("show"))
-    {
+    } else if (messageContainer.classList.contains("show")) {
         messageBody.innerHTML = message;
-        if(messageCloseTimeout){
+        if (messageCloseTimeout) {
             clearTimeout(messageCloseTimeout);
             messageCloseTimeout = null;
         }
-        
+
         setMessageCloseTimeout();
 
     }
@@ -84,7 +82,7 @@ let messageBox = (message) => {
 //Game Loop happens every second
 window.setInterval(function() {
 
-    if(autoClickerLive) {
+    if (autoClickerLive) {
         console.log('time to auto click');
         autoClicker();
     }
